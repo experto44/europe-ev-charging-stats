@@ -1,0 +1,9 @@
+{
+  "title": "Public EV charging stations in Europe, by country",
+  "upload_type": "dataset",
+  "description": "<p>Number of public electric-vehicle charging stations in 42 countries (41 in Europe, plus Georgia): stations, plugs, DC fast-charging stations and their share, stations by power band (150 kW+, 50–149, 22–49, under 22 kW, unknown), stations offering Type 2, CCS2 and CHAdeMO, and the five biggest DC networks per country.</p><p>Built from national registers and access points (NOBIL, Germany's Federal Network Agency, France's IRVE, Spain's MITERD register, Poland's national register, Türkiye's EPDK register and others), UK open data under the Public Charge Point Regulations, Hubject, operators' open feeds and Open Charge Map, as collected for the GeoCharge app. Snapshot of 16 November 2026. Per-country pages: https://geocharge.net/</p>",
+  "creators": [{"name": "Miruashvili, Karlo", "affiliation": "GeoCharge"}],
+  "license": "cc-by-4.0",
+  "keywords": ["electric vehicles", "EV charging", "charging infrastructure", "Europe", "open data", "AFIR", "fast charging"],
+  "related_identifiers": [{"identifier": "https://geocharge.net/", "relation": "isSupplementTo", "resource_type": "other"}]
+}
