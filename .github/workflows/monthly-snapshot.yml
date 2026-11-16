@@ -1,0 +1,35 @@
+# Monthly snapshot: copy the per-country table from geocharge.net/data/, commit it
+# into a dated folder and publish a GitHub release. Zenodo turns each release into
+# a new version under the same concept DOI.
+# Commits made here use GITHUB_TOKEN, so they trigger no other workflow.
+name: monthly-snapshot
+on:
+  schedule:
+    - cron: '0 6 1 * *'   # 1st of every month, 06:00 UTC (after the nightly site build)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: monthly-snapshot
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - id: snap
+        run: node .github/scripts/snapshot.mjs
+      - if: steps.snap.outputs.date != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE: ${{ steps.snap.outputs.date }}
+        run: |
+          git config user.name "GeoCharge"
+          git config user.email "geocharge.app@gmail.com"
+          git add -A
+          git commit -m "Snapshot $DATE"
+          git push
+          gh release create "v$DATE" --title "Snapshot $DATE" \
+            --notes "Per-country public EV charging figures for 42 countries, as of $DATE. CC BY 4.0. Source: https://geocharge.net/data/"
