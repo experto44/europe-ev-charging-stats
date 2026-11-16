@@ -1,5 +1,7 @@
 # Public EV charging stations in Europe, by country
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24272386.svg)](https://doi.org/10.5281/zenodo.24272386)
+
 How many public charging stations each of 42 countries has (41 in Europe, plus Georgia), how many of them are DC fast chargers, how they split by power, which connectors they offer, and which networks run the most fast chargers.
 
 The figures come from the catalogue behind [GeoCharge](https://geocharge.net/), a free EV charger map for Android and iPhone. New snapshots are added over time; the country pages on geocharge.net update every night.
@@ -44,7 +46,7 @@ The figures come from the catalogue behind [GeoCharge](https://geocharge.net/), 
 
 Suggested citation:
 
-> GeoCharge (2026). *Public EV charging stations in Europe, by country* (snapshot 2026-11-16). https://geocharge.net/
+> GeoCharge (2026). *Public EV charging stations in Europe, by country* (snapshot 2026-11-16) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.24272386
 
 ## Contact
 
